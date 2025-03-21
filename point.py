@@ -44,43 +44,44 @@ p3=Point("James", "Jane") #valid but probably not intended
 print(p1.x,p1.y) #access attributes, attributes of class are x and y
 print(p1)
 
-points=[]
-for i in range(5):
-    #create a random point
-    p=Point(
-        random.randint(-100,100),
-        random.randint(-100,100)
-    )
-    #append it to the list
-    points.append(p)
-for point in points:
+if __name__=="__main__":
+    points=[]
+    for i in range(5):
+        #create a random point
+        p=Point(
+            random.randint(-100,100),
+            random.randint(-100,100)
+        )
+        #append it to the list
+        points.append(p)
+    for point in points:
+        print(points)
+
+    #points.sort
+    p=Point(-12,-5)
+    print(p.distance_orig())
+
+    p1=(4,6)
+    p2=(7,7)
+
+    print(p1.__gt__(p2))
+    print("unsorted points")
+    print(points)
+    print("sorted points")
+    points.sort()
     print(points)
 
-#points.sort
-p=Point(-12,-5)
-print(p.distance_orig())
-
-p1=(4,6)
-p2=(7,7)
-
-print(p1.__gt__(p2))
-print("unsorted points")
-print(points)
-print("sorted points")
-points.sort()
-print(points)
-
-found_equal=0
-count=0
-while True:
-    if found_equal==10:
-        break
-    p1=Point(random.randint(-100,100),
-        random.randint(-100,100))
-    p2=Point(random.randint(-100,100),
-        random.randint(-100,100))
-    count+=1
-    if p1==p2:
-        print(p1,p2)
-        found_equal+=1
-print(f"Probability is 1 in {count/found_equal}")
+    found_equal=0
+    count=0
+    while True:
+        if found_equal==10:
+            break
+        p1=Point(random.randint(-100,100),
+            random.randint(-100,100))
+        p2=Point(random.randint(-100,100),
+            random.randint(-100,100))
+        count+=1
+        if p1==p2:
+            print(p1,p2)
+            found_equal+=1
+    print(f"Probability is 1 in {count/found_equal}")
