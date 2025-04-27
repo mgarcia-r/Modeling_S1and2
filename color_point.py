@@ -1,6 +1,6 @@
 from point import Point #point is file, Point is the class
 import random
-class ColorPoint(Point):
+class ColorPoint(Point): #Inherits from Point class to avoid duplication and expands functionality of the code
     def __init__(self,x,y,color):
         """
         Define a color point x,y color
@@ -10,6 +10,10 @@ class ColorPoint(Point):
         self.color=color
 
     def __str__(self):
+        """
+        Magic method that defines how a color point is printed
+        :return: the point as a string containing x, y and color
+        """
         return f"<{self.x},{self.y},>({self.color})"
 
 if __name__=="__main__":#to make sure this code doesn't run when import
